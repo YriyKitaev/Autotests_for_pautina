@@ -5,10 +5,18 @@ import helpers.ActionHelper;
 import helpers.TestData;
 import helpers.WebDriverHelper;
 import in.demo.PautinaTest.TestBase;
-import internal_directory.InternalDirectory;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static internal_directory.InternalDirectory.CompareTheCodePageList.COMPARE_THE_CODE;
+import static internal_directory.InternalDirectory.ContactsPageList.CONTACT_TITLE;
+import static internal_directory.InternalDirectory.ConverterPageList.CONVERTER;
+import static internal_directory.InternalDirectory.CssPageList.CSS_TITLE;
+import static internal_directory.InternalDirectory.GeneralPageList.HTML_CSS_TITLE;
+import static internal_directory.InternalDirectory.HtmlPageList.HTML_TITLE;
+import static internal_directory.InternalDirectory.IconsPageList.ICON_TITLE;
+import static internal_directory.InternalDirectory.ScreenResolutionPageList.SCREEN_RESOLUTION;
+import static internal_directory.InternalDirectory.ToolsPageList.TOOL_TITLE;
 
 @DisplayName(value = "Проверка начальной страницы сервиса")
 
@@ -21,7 +29,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Подождать
         sleep(1000);
         //Проверить заголовок 'Здесь вы можете найти документацию по HTML и CSS'
-        ActionHelper.getElementParagraphAssert(InternalDirectory.GeneralPageList.HTML_CSS_TITLE);
+        ActionHelper.getElementParagraphAssert(HTML_CSS_TITLE);
     }
 
     @DisplayName("Проверка проверка наличия и работы кнопки 'HTML'")
@@ -31,7 +39,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на кнопку 'HTML'
         ActionHelper.getElementHtmlButtonPress();
         //Проверить заголовок 'HTML'
-        ActionHelper.getElementHtmlTitleAssert(InternalDirectory.HtmlPageList.HTML_TITLE);
+        ActionHelper.getElementHtmlTitleAssert(HTML_TITLE);
     }
 
     @DisplayName("Проверка проверка наличия и работы кнопки 'CSS'")
@@ -41,7 +49,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на кнопку 'CSS'
         ActionHelper.getElementCssButtonPress();
         //Проверить заголовок 'CSS'
-        ActionHelper.getElementCssTitleAssert(InternalDirectory.CssPageList.CSS_TITLE);
+        ActionHelper.getElementCssTitleAssert(CSS_TITLE);
     }
 
     @DisplayName("Проверка наличия и работы поисковой строки")
@@ -53,7 +61,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Выбрать искомый элемент
         ActionHelper.getElementResultPress();
         //Проверить заголовок 'HTML'
-        ActionHelper.getElementHtmlFolderAssert(InternalDirectory.HtmlPageList.HTML_TITLE);
+        ActionHelper.getElementHtmlFolderAssert(HTML_TITLE);
         //Нажать на лого (вернуться на главную страницу)
         ActionHelper.getElementLogoPress();
         //Ввести рандомный CSS селектор
@@ -61,7 +69,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Выбрать искомый элемент
         ActionHelper.getElementResultPress();
         //Проверить заголовок 'CSS'
-        ActionHelper.getElementCssFolderAssert(InternalDirectory.CssPageList.CSS_TITLE);
+        ActionHelper.getElementCssFolderAssert(CSS_TITLE);
     }
 
     @DisplayName("Проверка наличия в футере инструмента 'Сравнить код' и переход к его странице")
@@ -71,7 +79,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на кнопку 'Сравнить код'
         ActionHelper.getElementCompareTheCodePress();
         //Проверить заголовок 'Сравнить код онлайн'
-        ActionHelper.getElementTitleCompareTheCodePage(InternalDirectory.CompareTheCodePageList.COMPARE_THE_CODE);
+        ActionHelper.getElementTitleCompareTheCodePage(COMPARE_THE_CODE);
     }
 
     @DisplayName("Проверка наличия в футере инструмента 'HTML символы в мнемоники' и переход к его странице")
@@ -81,7 +89,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на кнопку 'HTML символы в мнемоники'
         ActionHelper.getElementConverterPress();
         //Проверить заголовок 'Конвертер символов в мнемоники'
-        ActionHelper.getElementTitleConverterPage(InternalDirectory.ConverterPageList.CONVERTER);
+        ActionHelper.getElementTitleConverterPage(CONVERTER);
     }
 
     @DisplayName("Проверка наличия в футере инструмента 'Какое разрешение у моего экрана?' и переход к его странице")
@@ -91,7 +99,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на кнопку 'Какое разрешение у моего экрана?'
         ActionHelper.getElementScreenResolutionPress();
         //Проверить заголовок 'Какое разрешение у моего экрана?'
-        ActionHelper.getElementTitleScreenResolutionPage(InternalDirectory.ScreenResolutionPageList.SCREEN_RESOLUTION);
+        ActionHelper.getElementTitleScreenResolutionPage(SCREEN_RESOLUTION);
 
     }
 
@@ -104,7 +112,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на лого (вернуться на главную страницу)
         ActionHelper.getElementLogoPress();
         //Проверить заголовок 'Здесь вы можете найти документацию по HTML и CSS'
-        ActionHelper.getElementParagraphAssert(InternalDirectory.GeneralPageList.HTML_CSS_TITLE);
+        ActionHelper.getElementParagraphAssert(HTML_CSS_TITLE);
     }
 
     @DisplayName("Негативная проверка поисковой строки")
@@ -122,7 +130,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на вкладку 'HTML'
         ActionHelper.getElementHtmlTabPress();
         //Проверить заголовок 'HTML'
-        ActionHelper.getElementHtmlTitleAssert(InternalDirectory.HtmlPageList.HTML_TITLE);
+        ActionHelper.getElementHtmlTitleAssert(HTML_TITLE);
     }
 
     @DisplayName("Проверка наличия и работы вкладки 'CSS' в хэдере")
@@ -132,7 +140,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на вкладку 'CSS'
         ActionHelper.getElementCssTabPress();
         //Проверить заголовок 'CSS'
-        ActionHelper.getElementCssTitleAssert(InternalDirectory.CssPageList.CSS_TITLE);
+        ActionHelper.getElementCssTitleAssert(CSS_TITLE);
     }
 
     @DisplayName("Проверка наличия и работы вкладки 'Инструменты' в хэдере")
@@ -142,7 +150,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на вкладку 'Инструменты'
         ActionHelper.getElementToolsTabPress();
         //Проверить заголовок 'Инструменты'
-        ActionHelper.getElementToolTitleAssert(InternalDirectory.ToolsPageList.TOOL_TITLE);
+        ActionHelper.getElementToolTitleAssert(TOOL_TITLE);
     }
 
     @DisplayName("Проверка наличия и работы вкладки 'Иконки' в хэдере")
@@ -152,7 +160,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на вкладку 'Иконки'
         ActionHelper.getElementIconsTabPress();
         //Проверить заголовок 'Иконки'
-        ActionHelper.getElementIconTitleAssert(InternalDirectory.IconsPageList.ICON_TITLE);
+        ActionHelper.getElementIconTitleAssert(ICON_TITLE);
     }
 
     @DisplayName("Проверка наличия и работы вкладки 'Контакты' в хэдере")
@@ -162,7 +170,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на вкладку 'Контакты'
         ActionHelper.getElementContactsTabPress();
         //Проверить заголовок 'Контакты'
-        ActionHelper.getElementContactTitleAssert(InternalDirectory.ContactsPageList.CONTACT_TITLE);
+        ActionHelper.getElementContactTitleAssert(CONTACT_TITLE);
     }
 }
 

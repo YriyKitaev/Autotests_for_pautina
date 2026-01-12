@@ -1,20 +1,12 @@
 package in.demo.PautinaTest.TestMethods;
 
 import helpers.ActionHelper;
-import helpers.TestData;
 import helpers.WebDriverHelper;
-import internal_directory.InternalDirectory;
 import org.junit.jupiter.api.DisplayName;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
 
-import java.util.List;
-
-import static org.junit.Assert.assertTrue;
+import static helpers.TestData.randomLongString;
+import static helpers.TestData.randomMediumString;
+import static internal_directory.InternalDirectory.CompareTheCodePageList.*;
 
 @DisplayName(value = "Проверка для инструмента сравнения текста 'sravnit-kod'")
 public class ToolCompareTheCodeTestMethods {
@@ -26,9 +18,9 @@ public class ToolCompareTheCodeTestMethods {
         //Нажать на кнопку 'Сравнить код'
         ActionHelper.getElementCompareTheCodePress();
         //Ввести значение в поле 'Оригинальный текст'
-        ActionHelper.getElementTextareaBaseTextInput(TestData.randomMediumString);
+        ActionHelper.getElementTextareaBaseTextInput(randomMediumString);
         //Ввести значение в поле 'Измененный текст'
-        ActionHelper.getElementTextareaNewTextInput(TestData.randomLongString);
+        ActionHelper.getElementTextareaNewTextInput(randomLongString);
         //Нажать на кнопку 'Сравнить'
         ActionHelper.getElementCompareButtonPress();
         //Проверить отсутствие сообщения 'Тексты идентичны.'
@@ -42,13 +34,13 @@ public class ToolCompareTheCodeTestMethods {
         //Нажать на кнопку 'Сравнить код'
         ActionHelper.getElementCompareTheCodePress();
         //Ввести значение в поле 'Оригинальный текст'
-        ActionHelper.getElementTextareaBaseTextInput(TestData.randomLongString);
+        ActionHelper.getElementTextareaBaseTextInput(randomLongString);
         //Ввести значение в поле 'Измененный текст'
-        ActionHelper.getElementTextareaNewTextInput(TestData.randomLongString);
+        ActionHelper.getElementTextareaNewTextInput(randomLongString);
         //Нажать на кнопку 'Сравнить'
         ActionHelper.getElementCompareButtonPress();
         //Проверить сообщение 'Тексты идентичны'
-        ActionHelper.getElementIdenticalTextTitle(InternalDirectory.CompareTheCodePageList.IDENTICAL_TEXT_MESSAGE);
+        ActionHelper.getElementIdenticalTextTitle(IDENTICAL_TEXT_MESSAGE);
     }
 
     @DisplayName("Проверка заголовков 'Оригинальный текст' и 'Изменённый текст'")
@@ -58,8 +50,8 @@ public class ToolCompareTheCodeTestMethods {
         //Нажать на кнопку 'Сравнить код'
         ActionHelper.getElementCompareTheCodePress();
         //Проверить заголовок 'Оригинальный текст'
-        ActionHelper.getElementOriginalTextTitle(InternalDirectory.CompareTheCodePageList.ORIGINAL_TEXT);
+        ActionHelper.getElementOriginalTextTitle(ORIGINAL_TEXT);
         //Проверить заголовок 'Изменённый текст'
-        ActionHelper.getElementModifiedTextTitle(InternalDirectory.CompareTheCodePageList.MODIFIED_TEXT);
+        ActionHelper.getElementModifiedTextTitle(MODIFIED_TEXT);
     }
 }

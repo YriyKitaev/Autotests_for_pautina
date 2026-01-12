@@ -1,10 +1,12 @@
 package in.demo.PautinaTest.TestMethods;
 
 import helpers.ActionHelper;
-import helpers.TestData;
 import helpers.WebDriverHelper;
-import internal_directory.InternalDirectory;
 import org.junit.jupiter.api.DisplayName;
+
+import static helpers.TestData.*;
+import static internal_directory.InternalDirectory.ContactsPageList.*;
+import static internal_directory.InternalDirectory.GeneralPageList.HTML_CSS_TITLE;
 
 public class ContactsTestMethods {
     @DisplayName("Проверка раздела 'Контактная форма'")
@@ -14,7 +16,7 @@ public class ContactsTestMethods {
         //Нажать на вкладку 'Контакты'
         ActionHelper.getElementContactsTabPress();
         //Проверить заголовок 'Контакты'
-        ActionHelper.getElementContactTitleAssert(InternalDirectory.ContactsPageList.CONTACT_TITLE);
+        ActionHelper.getElementContactTitleAssert(CONTACT_TITLE);
     }
 
     @DisplayName("Проверка плейсхолдеров на форме ввода")
@@ -40,17 +42,17 @@ public class ContactsTestMethods {
         //Нажать на вкладку 'Контакты'
         ActionHelper.getElementContactsTabPress();
         //Ввести значение в поле 'Имя'
-        ActionHelper.getElementNameInputText(TestData.randomShortString);
+        ActionHelper.getElementNameInputText(randomShortString);
         //Ввести значение в поле 'Email'
-        ActionHelper.getElementEmailInputText(InternalDirectory.ContactsPageList.MAIL_TEST_ADDRESS);
+        ActionHelper.getElementEmailInputText(MAIL_TEST_ADDRESS);
         //Ввести значение в поле 'Тема'
-        ActionHelper.getElementSubjectInputText(TestData.randomMediumString);
+        ActionHelper.getElementSubjectInputText(randomMediumString);
         //Ввести значение в поле 'Сообщение'
-        ActionHelper.getElementMessageInputText(TestData.randomLongString);
+        ActionHelper.getElementMessageInputText(randomLongString);
         //Нажать на кнопку 'Отправить'
         ActionHelper.getElementSendButtonPress();
         //Проверить сообщение об успешной отправке 'Ваше сообщение отправлено, спасибо.'
-        ActionHelper.getElementSuccessMessageTitle(InternalDirectory.ContactsPageList.SUCCESS_MESSAGE);
+        ActionHelper.getElementSuccessMessageTitle(SUCCESS_MESSAGE);
     }
 
     @DisplayName("Проверка валидации полей на форме")
@@ -64,29 +66,29 @@ public class ContactsTestMethods {
         //Проверить что форма не отправлена и отсутствует сообщение 'Ваше сообщение отправлено, спасибо.' т.к. ни одно поле на форме не заполнено
         ActionHelper.getElementAbsentSuccessMessageTitle();
         //Ввести значение в поле 'Имя'
-        ActionHelper.getElementNameInputText(TestData.randomShortString);
+        ActionHelper.getElementNameInputText(randomShortString);
         //Нажать на кнопку 'Отправить'
         ActionHelper.getElementSendButtonPress();
         //Проверить что форма не отправлена и отсутствует сообщение 'Ваше сообщение отправлено, спасибо.' т.к. заполнено только поле 'Имя'
         ActionHelper.getElementAbsentSuccessMessageTitle();
         //Ввести значение в поле 'Тема'
-        ActionHelper.getElementSubjectInputText(TestData.randomMediumString);
+        ActionHelper.getElementSubjectInputText(randomMediumString);
         //Нажать на кнопку 'Отправить'
         ActionHelper.getElementSendButtonPress();
         //Проверить что форма не отправлена и отсутствует сообщение 'Ваше сообщение отправлено, спасибо.' т.к. заполнены только поля 'Имя', 'Email'
         ActionHelper.getElementAbsentSuccessMessageTitle();
         //Ввести значение в поле 'Email'
-        ActionHelper.getElementEmailInputText(InternalDirectory.ContactsPageList.MAIL_TEST_ADDRESS);
+        ActionHelper.getElementEmailInputText(MAIL_TEST_ADDRESS);
         //Нажать на кнопку 'Отправить'
         ActionHelper.getElementSendButtonPress();
         //Проверить что форма не отправлена и отсутствует сообщение 'Ваше сообщение отправлено, спасибо.' т.к. заполнены только поля 'Имя', 'Email', 'Тема'
         ActionHelper.getElementAbsentSuccessMessageTitle();
         //Ввести значение в поле 'Сообщение'
-        ActionHelper.getElementMessageInputText(TestData.randomLongString);
+        ActionHelper.getElementMessageInputText(randomLongString);
         //Нажать на кнопку 'Отправить'
         ActionHelper.getElementSendButtonPress();
         //Проверить сообщение об успешной отправке 'Ваше сообщение отправлено, спасибо.'
-        ActionHelper.getElementSuccessMessageTitle(InternalDirectory.ContactsPageList.SUCCESS_MESSAGE);
+        ActionHelper.getElementSuccessMessageTitle(SUCCESS_MESSAGE);
     }
 
     @DisplayName("Проверка кнопки 'На главную'")
@@ -96,20 +98,20 @@ public class ContactsTestMethods {
         //Нажать на вкладку 'Контакты'
         ActionHelper.getElementContactsTabPress();
         //Ввести значение в поле 'Имя'
-        ActionHelper.getElementNameInputText(TestData.randomShortString);
+        ActionHelper.getElementNameInputText(randomShortString);
         //Ввести значение в поле 'Email'
-        ActionHelper.getElementEmailInputText(InternalDirectory.ContactsPageList.MAIL_TEST_ADDRESS);
+        ActionHelper.getElementEmailInputText(MAIL_TEST_ADDRESS);
         //Ввести значение в поле 'Тема'
-        ActionHelper.getElementSubjectInputText(TestData.randomMediumString);
+        ActionHelper.getElementSubjectInputText(randomMediumString);
         //Ввести значение в поле 'Сообщение'
-        ActionHelper.getElementMessageInputText(TestData.randomLongString);
+        ActionHelper.getElementMessageInputText(randomLongString);
         //Нажать на кнопку 'Отправить'
         ActionHelper.getElementSendButtonPress();
         //Проверить сообщение об успешной отправке 'Ваше сообщение отправлено, спасибо.'
-        ActionHelper.getElementSuccessMessageTitle(InternalDirectory.ContactsPageList.SUCCESS_MESSAGE);
+        ActionHelper.getElementSuccessMessageTitle(SUCCESS_MESSAGE);
         //Нажать на кнопку 'На главную'
         ActionHelper.getElementGoGeneralPageButtonPress();
         //Проверить заголовок 'Здесь вы можете найти документацию по HTML и CSS'
-        ActionHelper.getElementParagraphAssert(InternalDirectory.GeneralPageList.HTML_CSS_TITLE);
+        ActionHelper.getElementParagraphAssert(HTML_CSS_TITLE);
     }
 }
