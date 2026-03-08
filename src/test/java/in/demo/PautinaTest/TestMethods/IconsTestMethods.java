@@ -58,7 +58,6 @@ public class IconsTestMethods {
         //Навести курсор на рандомную иконку
         TestData.hoverRandomElement();
         ActionHelper.getDownloadIconButtonPress();
-        sleep(2000);
     }
 
     @DisplayName("Проверка работы кнопки 'Скопировать' в тултипе при наведении на иконку")
