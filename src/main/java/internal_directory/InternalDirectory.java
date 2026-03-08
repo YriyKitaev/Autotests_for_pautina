@@ -73,7 +73,15 @@ public class InternalDirectory {
      **/
     public static final class ScreenResolutionPageList {
         public static final String
-                SCREEN_RESOLUTION = "Какое разрешение у моего экрана?";
+                SCREEN_RESOLUTION_TITLE = "Какое разрешение у моего экрана?",
+                MEDIA_RESOLUTION = "Медиа разрешение",
+                PHYSICAL_RESOLUTION = "Физическое разрешение",
+                VIEWPORT_SIZE = "Размер окна просмотра",
+                BROWSER_WINDOW_SIZE = "Размер окна браузера",
+                MEDIA_RESOLUTION_TITLE = "1440 x 900",
+                PHYSICAL_RESOLUTION_TITLE = "2880 x 1800",
+                VIEWPORT_SIZE_TITLE = "1440 x 788",
+                BROWSER_WINDOW_SIZE_TITLE = "1440 x 875";
     }
 
     /**
@@ -81,7 +89,10 @@ public class InternalDirectory {
      **/
     public static final class IconsPageList {
         public static final String
-                ICON_TITLE = "SVG иконки";
+                ICON_TITLE = "SVG иконки",
+                ICON_USE_RULES = "Правила пользования иконками",
+                SUCCESS_COPY_MESSAGE = "Иконка скопирована в буфер обмена.",
+                HOW_USE_ICON = "Как можно использовать иконки?";
     }
 
     /**

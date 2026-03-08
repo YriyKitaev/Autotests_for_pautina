@@ -65,6 +65,11 @@ public class ActionHelper {
         XpathHelpers.getIconPage.getElementIconTitle.shouldHave(text(textTitle));
     }
 
+    //Проверить заголовок вкладки 'Как можно использовать иконки?'
+    public static void getElementHowUseIconTitleAssert(String textTitle) {
+        XpathHelpers.getIconPage.getElementHowUseIconTab.shouldHave(text(textTitle));
+    }
+
     //Проверить заголовок вкладки 'Контакты'
     public static void getElementContactTitleAssert(String textTitle) {
         XpathHelpers.getContactPage.getElementContactTitle.shouldHave(text(textTitle));
@@ -123,6 +128,31 @@ public class ActionHelper {
     //Нажать на вкладку 'Иконки'
     public static void getElementIconsTabPress() {
         XpathHelpers.getGeneralPage.getElementIconsTab.click();
+    }
+
+    //Нажать на кнопку 'Скачать' в тултипе при наведении на иконку
+    public static void getDownloadIconButtonPress() {
+        XpathHelpers.getIconPage.getDownloadIconButton.click();
+    }
+
+    // Проверяем, что файл существует
+    public static void getDownloadIconExist() {
+        assert XpathHelpers.getIconPage.getDownloadIconButton.exists();
+    }
+
+    //Нажать на кнопку 'Скопировать' в тултипе при наведении на иконку
+    public static void getCopyIconButtonPress() {
+        XpathHelpers.getIconPage.getCopyIconButton.click();
+    }
+
+    //Проверить сообщение 'Иконка скопирована в буфер обмена'
+    public static void getElementSuccessCopyMessageIconPage(String textTitle) {
+        XpathHelpers.getIconPage.getElementSuccessCopyMessage.shouldHave(text(textTitle));
+    }
+
+    //Нажать на кнопку 'Правила пользования иконками'
+    public static void getElementIconsUseRulesPress() {
+        XpathHelpers.getIconPage.getElementIconUseRulesTab.click();
     }
 
     //Нажать на вкладку 'Контакты'
@@ -223,5 +253,45 @@ public class ActionHelper {
     //Проверить отсутствие сообщения 'Тексты идентичны.'
     public static void getElementAbsentIdenticalTextTitle() {
         $(XpathHelpers.getCompareTheCodePage.getElementIdenticalText).shouldNot(visible);
+    }
+
+    //Проверить заголовок 'Медиа разрешение'
+    public static void getElementMediaResolutionTitlePage(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementMediaResolutionTitle.shouldHave(text(textTitle));
+    }
+
+    //Проверить заголовок 'Физическое разрешение'
+    public static void getElementPhysicalResolutionTitle(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementPhysicalResolutionTitle.shouldHave(text(textTitle));
+    }
+
+    //Проверить заголовок 'Размер окна просмотра'
+    public static void getElementViewportSizeTitle(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementViewportSizeTitle.shouldHave(text(textTitle));
+    }
+
+    //Проверить заголовок 'Размер окна браузера'
+    public static void getElementBrowserWindowSizeTitle(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementBrowserWindowSizeTitle.shouldHave(text(textTitle));
+    }
+
+    //Проверить значение 'Медиа разрешение'
+    public static void getElementMediaResolutionValue(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementMediaResolutionValue.shouldHave(text(textTitle));
+    }
+
+    //Проверить значение 'Физическое разрешение'
+    public static void getElementPhysicalResolutionValue(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementPhysicalResolutionValue.shouldHave(text(textTitle));
+    }
+
+    //Проверить значение 'Размер окна просмотра'
+    public static void getElementViewportSizeValue(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementViewportSizeValue.shouldHave(text(textTitle));
+    }
+
+    //Проверить значение 'Размер окна браузера'
+    public static void getElementBrowserWindowSizeValue(String textTitle) {
+        XpathHelpers.getScreenResolutionPage.getElementBrowserWindowSizeValue.shouldHave(text(textTitle));
     }
 }

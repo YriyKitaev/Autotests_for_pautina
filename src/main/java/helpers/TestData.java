@@ -1,8 +1,14 @@
 package helpers;
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
 import internal_directory.InternalDirectory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -30,6 +36,20 @@ public class TestData {
         int randomIndex = random.nextInt(valuesCss.size());
         return valuesCss.get(randomIndex);
     }
+
+    /**
+     * Наводим курсор на рандомную иконку
+     */
+    public static void hoverRandomElement() {
+        // Находим все элементы по селектору
+        ElementsCollection elements = Selenide.elements(By.xpath("//section[@class='mini-icons']/a"));
+        // Генерируем случайный индекс
+        Random random = new Random();
+        int randomIndex = random.nextInt(elements.size());
+        // Получаем случайный элемент и наводим курсор
+        elements.get(randomIndex).hover();
+    }
+
 
     /**
      Сгенерировать рандомную строку

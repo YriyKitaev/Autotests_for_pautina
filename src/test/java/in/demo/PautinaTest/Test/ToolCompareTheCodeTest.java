@@ -23,9 +23,4 @@ public class ToolCompareTheCodeTest extends ToolCompareTheCodeTestMethods {
     @DisplayName("Проверка заголовков 'Оригинальный текст' и 'Изменённый текст'")
     public void toolCompareTheCodeTest_03() {
         ToolCompareTheCodeTestMethods.testMethod_03();}
-
-//    @Test
-//    @DisplayName("Проверка что в случае ввода разных текстов отсутствует сообщение 'Тексты идентичны.'")
-//    public void toolCompareTheCodeTest_04() {
-//        ToolCompareTheCodeTestMethods.testMethod_04();}
 }

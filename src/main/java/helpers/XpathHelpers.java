@@ -75,7 +75,15 @@ public class XpathHelpers {
      Xpath элементы страницы 'Какое разрешение у моего экрана?'
      **/
     public static final class getScreenResolutionPage {
-        public static final SelenideElement getElementTitle = $(By.xpath("//h1[contains(text(), 'Какое разрешение у моего экрана?')]"));
+        public static final SelenideElement getElementTitle = $(By.xpath("//h1[contains(@class, 'resolution__header')]"));
+        public static final SelenideElement getElementMediaResolutionTitle = $(By.xpath("//div[contains(@class, 'resolution__media')]/span[contains(@class, 'resolution__label')]"));
+        public static final SelenideElement getElementPhysicalResolutionTitle = $(By.xpath("//div[contains(@class, 'resolution__physical')]/span[contains(@class, 'resolution__label')]"));
+        public static final SelenideElement getElementViewportSizeTitle = $(By.xpath("//div[contains(@class, 'resolution__viewport')]/span[contains(@class, 'resolution__label')]"));
+        public static final SelenideElement getElementBrowserWindowSizeTitle = $(By.xpath("//div[contains(@class, 'resolution__browser')]/span[contains(@class, 'resolution__label')]"));
+        public static final SelenideElement getElementMediaResolutionValue = $(By.xpath("//div[contains(@class, 'resolution__media')]/span[contains(@class, 'resolution__value')]"));
+        public static final SelenideElement getElementPhysicalResolutionValue = $(By.xpath("//div[contains(@class, 'resolution__physical')]/span[contains(@class, 'resolution__value')]"));
+        public static final SelenideElement getElementViewportSizeValue = $(By.xpath("//div[contains(@class, 'resolution__viewport')]/span[contains(@class, 'resolution__value')]"));
+        public static final SelenideElement getElementBrowserWindowSizeValue = $(By.xpath("//div[contains(@class, 'resolution__browser')]/span[contains(@class, 'resolution__value')]"));
     }
 
     /**
@@ -83,6 +91,13 @@ public class XpathHelpers {
      **/
     public static final class getIconPage {
         public static final SelenideElement getElementIconTitle = $(By.xpath("//h1[@class='icons__header' and text()='SVG иконки']"));
+        public static final SelenideElement getElementIconUseRulesTab = $(By.xpath("//a[@class='icons-licence__link' and text()='Правила пользования иконками']"));
+        public static final SelenideElement getElementHowUseIconTab = $(By.xpath("//h1[@class='icons__header' and text()='Как можно использовать иконки?']"));
+        public static final SelenideElement getSectionIcon = $(By.xpath("//section[@class='mini-icons']"));
+        public static final SelenideElement getElementIcon = $(By.xpath("//section[@class='mini-icons']/a"));
+        public static final SelenideElement getDownloadIconButton = $(By.xpath("//a[@class='mini-icons__download-icon']"));
+        public static final SelenideElement getCopyIconButton = $(By.xpath("//a[@class='mini-icons__copy-icon']"));
+        public static final SelenideElement getElementSuccessCopyMessage = $(By.xpath("//div[@class='copy-success copy-success--shown']"));
     }
 
     /**

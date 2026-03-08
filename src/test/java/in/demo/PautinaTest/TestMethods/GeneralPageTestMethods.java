@@ -15,7 +15,7 @@ import static internal_directory.InternalDirectory.CssPageList.CSS_TITLE;
 import static internal_directory.InternalDirectory.GeneralPageList.HTML_CSS_TITLE;
 import static internal_directory.InternalDirectory.HtmlPageList.HTML_TITLE;
 import static internal_directory.InternalDirectory.IconsPageList.ICON_TITLE;
-import static internal_directory.InternalDirectory.ScreenResolutionPageList.SCREEN_RESOLUTION;
+import static internal_directory.InternalDirectory.ScreenResolutionPageList.SCREEN_RESOLUTION_TITLE;
 import static internal_directory.InternalDirectory.ToolsPageList.TOOL_TITLE;
 
 @DisplayName(value = "Проверка начальной страницы сервиса")
@@ -99,7 +99,7 @@ public class GeneralPageTestMethods extends TestBase {
         //Нажать на кнопку 'Какое разрешение у моего экрана?'
         ActionHelper.getElementScreenResolutionPress();
         //Проверить заголовок 'Какое разрешение у моего экрана?'
-        ActionHelper.getElementTitleScreenResolutionPage(SCREEN_RESOLUTION);
+        ActionHelper.getElementTitleScreenResolutionPage(SCREEN_RESOLUTION_TITLE);
 
     }
 
