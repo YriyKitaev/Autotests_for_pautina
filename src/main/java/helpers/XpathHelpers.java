@@ -98,6 +98,10 @@ public class XpathHelpers {
         public static final SelenideElement getDownloadIconButton = $(By.xpath("//a[@class='mini-icons__download-icon']"));
         public static final SelenideElement getCopyIconButton = $(By.xpath("//a[@class='mini-icons__copy-icon']"));
         public static final SelenideElement getElementSuccessCopyMessage = $(By.xpath("//div[@class='copy-success copy-success--shown']"));
+        public static final SelenideElement getDownloadButton = $(By.xpath("//a[@class='icon-controls__download']"));
+        public static final SelenideElement getCopyButton = $(By.xpath("//a[@class='icon-controls__copy']"));
+        public static final SelenideElement getInputIcon = $(By.xpath("//input[@class='icons-search__input']"));
+        public static final SelenideElement getAvitoIcon = $(By.xpath("//a[@class='mini-icons__item mini-icons__avito mini-icons__item--visible']"));
     }
 
     /**

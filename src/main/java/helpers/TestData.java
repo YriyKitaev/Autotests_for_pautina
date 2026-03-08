@@ -4,11 +4,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import internal_directory.InternalDirectory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -38,18 +35,30 @@ public class TestData {
     }
 
     /**
-     * Наводим курсор на рандомную иконку
-     */
+     Навести курсор на рандомную иконку
+     **/
     public static void hoverRandomElement() {
-        // Находим все элементы по селектору
+        //Находим все элементы по селектору
         ElementsCollection elements = Selenide.elements(By.xpath("//section[@class='mini-icons']/a"));
-        // Генерируем случайный индекс
+        //Генерируем случайный индекс
         Random random = new Random();
         int randomIndex = random.nextInt(elements.size());
-        // Получаем случайный элемент и наводим курсор
+        //Получаем случайный элемент и наводим курсор
         elements.get(randomIndex).hover();
     }
 
+    /**
+     Кликнуть на рандомную иконку
+     **/
+    public static void clickRandomElement() {
+        //Находим все элементы по селектору
+        ElementsCollection elements = Selenide.elements(By.xpath("//section[@class='mini-icons']/a"));
+        //Генерируем случайный индекс
+        Random random = new Random();
+        int randomIndex = random.nextInt(elements.size());
+        //Получаем случайный элемент и кликаем на него
+        elements.get(randomIndex).click();
+    }
 
     /**
      Сгенерировать рандомную строку

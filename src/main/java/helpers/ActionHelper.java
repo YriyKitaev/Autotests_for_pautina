@@ -40,6 +40,16 @@ public class ActionHelper {
         XpathHelpers.getGeneralPage.getElementSearchInput.setValue(text);
     }
 
+    //Ввести значение в строку поиска иконок
+    public static void getInputIconText(String text) {
+        XpathHelpers.getIconPage.getInputIcon.setValue(text);
+    }
+
+//    //Проверить что элемент присутствует на странице
+//    public static void getInputIconText(String text) {
+//        XpathHelpers.getIconPage.getInputIcon.setValue(text);
+//    }
+
     //Выбрать искомый элемент
     public static void getElementResultPress() {
         XpathHelpers.getGeneralPage.getElementResult.click();
@@ -135,14 +145,24 @@ public class ActionHelper {
         XpathHelpers.getIconPage.getDownloadIconButton.click();
     }
 
-    // Проверяем, что файл существует
+    //Нажать на кнопку 'Скачать' на странице с иконкой
+    public static void getDownloadButtonPress() {
+        XpathHelpers.getIconPage.getDownloadButton.click();
+    }
+
+    //Проверяем что файл существует
     public static void getDownloadIconExist() {
-        assert XpathHelpers.getIconPage.getDownloadIconButton.exists();
+        assert XpathHelpers.getIconPage.getAvitoIcon.exists();
     }
 
     //Нажать на кнопку 'Скопировать' в тултипе при наведении на иконку
     public static void getCopyIconButtonPress() {
         XpathHelpers.getIconPage.getCopyIconButton.click();
+    }
+
+    //Нажать на кнопку 'Скопировать' на странице с иконкой
+    public static void getCopyButtonPress() {
+        XpathHelpers.getIconPage.getCopyButton.click();
     }
 
     //Проверить сообщение 'Иконка скопирована в буфер обмена'

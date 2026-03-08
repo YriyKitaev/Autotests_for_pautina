@@ -3,8 +3,10 @@ package in.demo.PautinaTest.TestMethods;
 import helpers.ActionHelper;
 import helpers.TestData;
 import helpers.WebDriverHelper;
+import helpers.XpathHelpers;
 import org.junit.jupiter.api.DisplayName;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.sleep;
 import static internal_directory.InternalDirectory.IconsPageList.*;
 
@@ -27,6 +29,12 @@ public class IconsTestMethods {
         WebDriverHelper.initWebDriver();
         //Нажать на вкладку 'Иконки'
         ActionHelper.getElementIconsTabPress();
+        //Ввести наименование иконки (avito)
+        ActionHelper.getInputIconText("avito");
+        //Проверяем что файл существует
+        XpathHelpers.getIconPage.getAvitoIcon.should(exist);
+        //Проверяем что кнопка видна и кликабельна
+        XpathHelpers.getIconPage.getAvitoIcon.shouldBe(visible, enabled);
     }
 
     @DisplayName("Проверка содержимого на странице с иконкой")
@@ -35,6 +43,15 @@ public class IconsTestMethods {
         WebDriverHelper.initWebDriver();
         //Нажать на вкладку 'Иконки'
         ActionHelper.getElementIconsTabPress();
+        //Кликнуть на рандомную иконку
+        TestData.clickRandomElement();
+        //Кликнуть на кнопку 'Скачать'
+        ActionHelper.getDownloadButtonPress();
+        //Кликнуть на кнопку 'Скопировать'
+        ActionHelper.getCopyButtonPress();
+        //Проверить сообщение 'Иконка скопирована в буфер обмена'
+        ActionHelper.getElementSuccessCopyMessageIconPage(SUCCESS_COPY_MESSAGE);
+        sleep(1000);
     }
 
     @DisplayName("Проверка раздела 'Правила пользования иконками'")
@@ -57,7 +74,9 @@ public class IconsTestMethods {
         ActionHelper.getElementIconsTabPress();
         //Навести курсор на рандомную иконку
         TestData.hoverRandomElement();
+        //Нажать на кнопку 'Скачать' в тултипе при наведении на иконку
         ActionHelper.getDownloadIconButtonPress();
+        sleep(2000);
     }
 
     @DisplayName("Проверка работы кнопки 'Скопировать' в тултипе при наведении на иконку")
@@ -69,7 +88,9 @@ public class IconsTestMethods {
         //Навести курсор на рандомную иконку
         TestData.hoverRandomElement();
         sleep(1000);
+        //Нажать на кнопку 'Скопировать' в тултипе при наведении на иконку
         ActionHelper.getCopyIconButtonPress();
+        //Проверить сообщение 'Иконка скопирована в буфер обмена'
         ActionHelper.getElementSuccessCopyMessageIconPage(SUCCESS_COPY_MESSAGE);
         sleep(1000);
     }
